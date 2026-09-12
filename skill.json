@@ -1,0 +1,44 @@
+{
+  "name": "genpark-autonomous-task-dag-decomposer-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Autonomous multi-stage prompt-to-DAG planner resolving dependency topologies, concurrency windows, and execution schedules.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "agent-orchestration",
+  "tags": [
+    "task-planner",
+    "dag-decomposition",
+    "agent-swarm",
+    "autonomous-workflow",
+    "topological-sort"
+  ],
+  "inputs": {
+    "goal_prompt": {
+      "type": "string",
+      "default": "Design, benchmark, and publish an e-commerce landing page"
+    },
+    "max_parallel_workers": {
+      "type": "integer",
+      "default": 4
+    }
+  },
+  "outputs": {
+    "plan_id": {
+      "type": "string"
+    },
+    "topological_order": {
+      "type": "array"
+    },
+    "total_subtasks": {
+      "type": "integer"
+    },
+    "critical_path_latency_sec": {
+      "type": "number"
+    },
+    "plan_manifest_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
